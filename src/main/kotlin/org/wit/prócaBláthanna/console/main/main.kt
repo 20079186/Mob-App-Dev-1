@@ -8,6 +8,7 @@ import java.awt.SystemColor.menu
 private val logger = KotlinLogging.logger{}
 
 var name = ""
+var description = ""
 
 
 fun main(args: Array<String>) {
@@ -57,7 +58,9 @@ fun addFLower(){
     println()
     print("Enter a Name : ")
     name = readLine()!!
-    println("You entered $name for name")
+    print("Enter a description : ")
+    description = readLine()!!
+    println("You entered $name for name and [ $description ] for description")
 
 }
 
@@ -66,7 +69,9 @@ fun updateFLower(){
     println()
     print("Enter a new name for [ $name } : ")
     name = readLine()!!
-    println("You updated [ $name ] for name ")
+    print("Enter a new Description for [ $description : ] ")
+    description = readLine()!!
+    println("You updated [ $name ] for name and [ $description ] for desceription")
 
 
 }
