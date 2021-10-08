@@ -2,13 +2,28 @@ package org.wit.prócaBláthanna.console.main
 
 
 import mu.KotlinLogging
+import java.awt.SystemColor.menu
 
 
 private val logger = KotlinLogging.logger{}
 
 fun main(args: Array<String>) {
-    logger.info {"Launching Próca Bláthanna App"}
-    println("Próca Bláthanna App, for Mobile App Development")
+    logger.info { "Launching Placemark Console App" }
+    println("Placemark Kotlin App Version 1.0")
+
+    var input: Int
+
+    do {
+        input = menu()
+        when(input) {
+            1 -> println("You Chose Add Placemark")
+            -1 -> println("Exiting App")
+            else -> println("Invalid Option")
+        }
+        println()
+    } while (input != -1)
+    logger.info { "Shutting Down Placemark Console App" }
+}
 
     fun menu() : Int {
 
@@ -16,18 +31,17 @@ fun main(args: Array<String>) {
         var input: String? = null
 
         println("Main Menu")
-        println(" 1. Add Flower")
+        println(" 1. Add Placemark")
+        println(" 2. Update Placemark")
+        println(" 3. List All Placemarks")
         println("-1. Exit")
         println()
-        print("Enter a option")
+        print("Enter an integer : ")
         input = readLine()!!
-        option = input.toInt()
-
+        option = if (input.toIntOrNull() != null && !input.isEmpty())
+            input.toInt()
+        else
+            -9
         return option
-
-
-
-
     }
 
-}
