@@ -8,21 +8,21 @@ import java.awt.SystemColor.menu
 private val logger = KotlinLogging.logger{}
 
 fun main(args: Array<String>) {
-    logger.info { "Launching Placemark Console App" }
-    println("Placemark Kotlin App Version 1.0")
+    logger.info { "Launching PrócaBláthanna Console App" }
+
 
     var input: Int
 
     do {
         input = menu()
         when(input) {
-            1 -> println("You Chose Add Placemark")
+            1 -> println("You Chose Add FLower")
             -1 -> println("Exiting App")
             else -> println("Invalid Option")
         }
         println()
     } while (input != -1)
-    logger.info { "Shutting Down Placemark Console App" }
+    logger.info { "Shutting Down PrócaBláthanna Console App" }
 }
 
     fun menu() : Int {
@@ -31,9 +31,9 @@ fun main(args: Array<String>) {
         var input: String? = null
 
         println("Main Menu")
-        println(" 1. Add Placemark")
-        println(" 2. Update Placemark")
-        println(" 3. List All Placemarks")
+        println(" 1. Add FLower")
+        println(" 2. Update FLower")
+        println(" 3. List All FLowers")
         println("-1. Exit")
         println()
         print("Enter an integer : ")
