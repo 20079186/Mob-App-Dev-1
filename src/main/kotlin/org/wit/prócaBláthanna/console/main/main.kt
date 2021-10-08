@@ -9,6 +9,7 @@ import java.awt.SystemColor.menu
 private val logger = KotlinLogging.logger{}
 
 var flower = FlowerModel()
+var flowers = ArrayList<FlowerModel>()
 
 fun main(args: Array<String>) {
     logger.info { "Launching PrócaBláthanna Console App" }
@@ -59,7 +60,13 @@ fun addFLower(){
     flower.name = readLine()!!
     print("Enter a description : ")
     flower.description = readLine()!!
-    println("You entered $flower.name for name and [ $flower.description ] for description")
+
+    if (flower.name.isNotEmpty() && flower.description.isNotEmpty()) {
+        flowers.add(flower.copy())
+        logger.info("Flower added : [ $flower ] ")
+    }
+    else
+        logger.info("Flower not added!")
 
 }
 
@@ -76,6 +83,9 @@ fun updateFLower(){
 }
 
 fun listFlowers(){
+    println("List all Flowers")
+    println()
+    flowers.forEach {logger.info("${it}")}
 
 
 }
