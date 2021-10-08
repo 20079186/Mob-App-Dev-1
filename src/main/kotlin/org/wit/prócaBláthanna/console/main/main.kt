@@ -2,14 +2,13 @@ package org.wit.prócaBláthanna.console.main
 
 
 import mu.KotlinLogging
+import org.wit.prócaBláthanna.console.models.FlowerModel
 import java.awt.SystemColor.menu
 
 
 private val logger = KotlinLogging.logger{}
 
-var name = ""
-var description = ""
-
+var flower = FlowerModel()
 
 fun main(args: Array<String>) {
     logger.info { "Launching PrócaBláthanna Console App" }
@@ -57,21 +56,21 @@ fun addFLower(){
     println("Add Flower")
     println()
     print("Enter a Name : ")
-    name = readLine()!!
+    flower.name = readLine()!!
     print("Enter a description : ")
-    description = readLine()!!
-    println("You entered $name for name and [ $description ] for description")
+    flower.description = readLine()!!
+    println("You entered $flower.name for name and [ $flower.description ] for description")
 
 }
 
 fun updateFLower(){
     println("Update FLower")
     println()
-    print("Enter a new name for [ $name } : ")
-    name = readLine()!!
-    print("Enter a new Description for [ $description : ] ")
-    description = readLine()!!
-    println("You updated [ $name ] for name and [ $description ] for desceription")
+    print("Enter a new name for [ $flower.name } : ")
+    flower.name = readLine()!!
+    print("Enter a new Description for [ $flower.description : ] ")
+    flower.description = readLine()!!
+    println("You updated [ $flower.name ] for name and [ $flower.description ] for description")
 
 
 }
