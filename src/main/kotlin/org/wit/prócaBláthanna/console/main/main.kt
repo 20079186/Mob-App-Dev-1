@@ -48,13 +48,13 @@ fun main(args: Array<String>) {
     }
 
 fun addFLower(){
-    var title : String
+    var name : String
 
     println("Add Flower")
     println()
     print("Enter a Name : ")
-    title = readLine()!!
-    println("You entered $title for name")
+    name = readLine()!!
+    println("You entered $name for name")
 
 }
 
