@@ -16,7 +16,9 @@ fun main(args: Array<String>) {
     do {
         input = menu()
         when(input) {
-            1 -> println("You Chose Add FLower")
+            1 -> addFLower()
+            2 -> updateFLower()
+            3 -> listFlowers()
             -1 -> println("Exiting App")
             else -> println("Invalid Option")
         }
@@ -36,7 +38,7 @@ fun main(args: Array<String>) {
         println(" 3. List All FLowers")
         println("-1. Exit")
         println()
-        print("Enter an integer : ")
+        print("Enter an option : ")
         input = readLine()!!
         option = if (input.toIntOrNull() != null && !input.isEmpty())
             input.toInt()
@@ -45,3 +47,22 @@ fun main(args: Array<String>) {
         return option
     }
 
+fun addFLower(){
+    var title : String
+
+    println("Add Flower")
+    println()
+    print("Enter a Name : ")
+    title = readLine()!!
+    println("You entered $title for name")
+
+}
+
+fun updateFLower(){
+
+}
+
+fun listFlowers(){
+
+
+}
