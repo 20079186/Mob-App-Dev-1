@@ -7,6 +7,9 @@ import java.awt.SystemColor.menu
 
 private val logger = KotlinLogging.logger{}
 
+var name = ""
+
+
 fun main(args: Array<String>) {
     logger.info { "Launching PrócaBláthanna Console App" }
 
@@ -48,7 +51,7 @@ fun main(args: Array<String>) {
     }
 
 fun addFLower(){
-    var name : String
+
 
     println("Add Flower")
     println()
@@ -59,6 +62,12 @@ fun addFLower(){
 }
 
 fun updateFLower(){
+    println("Update FLower")
+    println()
+    print("Enter a new name for [ $name } : ")
+    name = readLine()!!
+    println("You updated [ $name ] for name ")
+
 
 }
 
