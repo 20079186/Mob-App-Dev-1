@@ -23,6 +23,7 @@ fun main(args: Array<String>) {
             1 -> addFLower()
             2 -> updateFLower()
             3 -> listFlowers()
+            4 -> searchFlower()
             -1 -> println("Exiting App")
             else -> println("Invalid Option")
         }
@@ -40,6 +41,7 @@ fun main(args: Array<String>) {
         println(" 1. Add FLower")
         println(" 2. Update FLower")
         println(" 3. List All FLowers")
+        println(" 4. Search All FLowers")
         println("-1. Exit")
         println()
         print("Enter an option : ")
@@ -87,5 +89,26 @@ fun listFlowers(){
     println()
     flowers.forEach {logger.info("${it}")}
 
+
+}
+
+fun searchFlower() {
+    var searchFamily = getfamily()
+}
+
+fun getfamily() : Long{
+    var familyId: String?
+    var searchFamily: Long
+    print("Enter family name to find flowers : ")
+    familyId = readLine()!!
+    searchFamily = if (familyId.toLongOrNull() != null && !familyId.isEmpty())
+        familyId.toLong()
+    else
+        -9
+    return searchFamily
+}
+    fun search(id: Long) : FlowerModel? {
+        var foundFLower: FlowerModel? = flowers.find { p -> p.id == id}
+        return foundFLower
 
 }
