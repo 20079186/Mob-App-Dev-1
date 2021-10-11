@@ -1,13 +1,13 @@
 package org.wit.prócaBláthanna.console.controllers
 
 import mu.KotlinLogging
+import org.wit.prócaBláthanna.console.models.FlowerJSONStore
 import org.wit.prócaBláthanna.console.models.FlowerModel
-import org.wit.prócaBláthanna.console.models.FlowerMemStore
 import org.wit.prócaBláthanna.console.views.FlowerView
 
 class FlowerController {
 
-    val flowers = FlowerMemStore()
+    val flowers = FlowerJSONStore()
     val flowerView = FlowerView()
     val logger = KotlinLogging.logger{}
 

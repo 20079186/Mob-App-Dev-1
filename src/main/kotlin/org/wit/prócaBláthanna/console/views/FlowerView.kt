@@ -2,6 +2,7 @@ package org.wit.prócaBláthanna.console.views
 
 import org.wit.prócaBláthanna.console.main.flowerView
 import org.wit.prócaBláthanna.console.main.flowers
+import org.wit.prócaBláthanna.console.models.FlowerJSONStore
 import org.wit.prócaBláthanna.console.models.FlowerMemStore
 import org.wit.prócaBláthanna.console.models.FlowerModel
 
@@ -28,7 +29,7 @@ class FlowerView {
         return option
     }
 
-    fun listFlowers(flowers : FlowerMemStore) {
+    fun listFlowers(flowers: FlowerJSONStore) {
         println("List All Flowers")
         println()
         flowers.logAll()
