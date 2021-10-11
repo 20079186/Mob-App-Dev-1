@@ -1,15 +1,14 @@
 package org.wit.prócaBláthanna.console.models
 
 import mu.KotlinLogging
-import org.wit.prócaBláthanna.console.main.getfamily
+
 
 private val logger = KotlinLogging.logger {}
-//var lastId = 0L
+var lastId = 0L
 
-//internal fun getFamily(): String {
-  //  return
-//}
-
+internal fun getId(): Long {
+    return lastId++
+}
 class FlowerMemStore : FlowerStore {
 
     val flowers = ArrayList<FlowerModel>()
@@ -18,13 +17,13 @@ class FlowerMemStore : FlowerStore {
         return flowers
     }
 
-    override fun findOne(id: String) : FlowerModel? {
+    override fun findOne(id: Long) : FlowerModel? {
         var foundFlower: FlowerModel? = flowers.find { p -> p.id == id }
         return foundFlower
     }
 
     override fun create(flower: FlowerModel) {
-        flower.id = getfamily()
+        flower.id = getId()
         flowers.add(flower)
         logAll()
     }
