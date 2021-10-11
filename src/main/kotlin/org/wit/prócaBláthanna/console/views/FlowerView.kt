@@ -18,6 +18,7 @@ class FlowerView {
         println(" 2. Update Flower")
         println(" 3. List All Flower")
         println(" 4. Search Flower")
+        println(" 5. Delete Flower")
         println("-1. Exit")
         println()
         print("Enter Option : ")

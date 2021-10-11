@@ -65,6 +65,11 @@ class FlowerJSONStore : FlowerStore
         val jsonString = read(JSON_FILE)
         flowers = Gson().fromJson(jsonString, listType)
     }
+
+    override fun delete(flower: FlowerModel) {
+        flowers.remove(flower)
+        serialize()
+    }
 }
 
 

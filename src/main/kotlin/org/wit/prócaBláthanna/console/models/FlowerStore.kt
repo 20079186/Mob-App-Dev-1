@@ -5,4 +5,5 @@ interface FlowerStore {
     fun findOne(id: Long): FlowerModel?
     fun create(flower: FlowerModel )
     fun update(flower: FlowerModel )
+    fun delete(flower: FlowerModel)
 }

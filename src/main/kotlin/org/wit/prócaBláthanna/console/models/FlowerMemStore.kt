@@ -36,6 +36,10 @@ class FlowerMemStore : FlowerStore {
         }
     }
 
+    override fun delete(flower: FlowerModel){
+        flowers.remove(flower)
+    }
+
     internal fun logAll() {
         flowers.forEach { logger.info("${it}") }
     }

@@ -25,6 +25,7 @@ class FlowerController {
                 2 -> update()
                 3 -> list()
                 4 -> search()
+                5 -> delete()
 
                 -1 -> println("Exiting App")
                 else -> println("Invalid Option")
@@ -79,6 +80,17 @@ class FlowerController {
         var foundFlower = flowers.findOne(id)
         return foundFlower
     }
+ fun delete(){
+     flowerView.listFlowers(flowers)
+     var searchId = flowerView.getId()
+     val aFlower = search(searchId)
 
+     if(aFlower != null) {
+         flowers.delete(aFlower)
+         println("Flower Deleted")
+         flowerView.listFlowers(flowers)
+     }else
+         print("Flower not deleted")
+ }
 
 }
