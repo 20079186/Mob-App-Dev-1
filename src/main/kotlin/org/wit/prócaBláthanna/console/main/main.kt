@@ -39,6 +39,13 @@ fun main(args: Array<String>) {
 
 }
 
+//fun inSpring(inputList: List<Season>): List<Season>{
+ //   val filteredList = ArrayList<Season>()
+ //   inputList.forEach { { season ->
+ ////       if ()
+ //   } }
+//}
+
 
 fun addFlower(){
     var aFlower = FlowerModel()
