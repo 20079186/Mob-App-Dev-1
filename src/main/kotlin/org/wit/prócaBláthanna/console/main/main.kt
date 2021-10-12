@@ -16,6 +16,27 @@ val flowerView = FlowerView()
 
 fun main(args: Array<String>) {
   FlowerController().start()
+
+
+
+
+
+    var Spring: List<String> = arrayListOf()
+    var Summer: List<String> = arrayListOf()
+    var Autumn: List<String> = arrayListOf()
+    var Winter: List<String> = arrayListOf()
+
+
+    val inSp = Spring.filter { it.startsWith("sp")}
+    println(inSp)
+    val inSu = Summer.filter { it.startsWith("su")}
+    println(inSu)
+    val inAu = Autumn.filter { it.startsWith("au")}
+    println(inAu)
+    val inWi = Winter.filter { it.startsWith("wi")}
+    println(inWi)
+
+
 }
 
 
