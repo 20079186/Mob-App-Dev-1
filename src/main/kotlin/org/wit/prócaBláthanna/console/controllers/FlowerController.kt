@@ -44,7 +44,7 @@ class FlowerController {
         if (flowerView.addFlowerData(aFlower))
             flowers.create(aFlower)
         else
-            logger.info("Placemark Not Added")
+            logger.info("Flower Not Added")
     }
 
     fun list() {
