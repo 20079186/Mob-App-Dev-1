@@ -1,8 +1,8 @@
 package org.wit.prócaBláthanna.console.main
 
-import org.wit.prócaBláthanna.console.views.FlowerView
-import org.wit.prócaBláthanna.console.views.MyView
+import org.wit.prócaBláthanna.console.views.MainMenu
+
 import tornadofx.*
 
 
-class MainApp : App(MyView::class)
+class MainApp : App(MainMenu::class)
