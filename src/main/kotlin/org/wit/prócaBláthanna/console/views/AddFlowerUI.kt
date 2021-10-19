@@ -3,12 +3,14 @@ package org.wit.prócaBláthanna.console.views
 
 import javafx.beans.property.SimpleStringProperty
 import javafx.geometry.Orientation
+import org.wit.prócaBláthanna.console.controllers.FlowerController
 
 import org.wit.prócaBláthanna.console.controllers.UIController
 import tornadofx.*
 import kotlin.reflect.KClass
 
 class AddFlowerUI : View("Add Flower") {
+
     val model = ViewModel()
     val _family = model.bind { SimpleStringProperty() }
     val _name = model.bind { SimpleStringProperty() }
@@ -17,6 +19,7 @@ class AddFlowerUI : View("Add Flower") {
     val _season = model.bind { SimpleStringProperty() }
 
     val UIController: UIController by inject()
+    //val FlowerController: FlowerController by inject()
 
     override val root = form {
         setPrefSize(400.0, 200.0)
@@ -42,7 +45,7 @@ class AddFlowerUI : View("Add Flower") {
                 useMaxWidth = true
                 action {
                     runAsyncWithProgress {
-                        UIController.addFlower()
+                        UIController.add(_family.toString(), _name.toString(), _description.toString(), _care.toString(), _season.toString())
 
                     }
                 }

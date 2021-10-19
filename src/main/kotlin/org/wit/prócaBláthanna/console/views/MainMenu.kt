@@ -13,7 +13,7 @@ class MainMenu : View("PrócaBláthanna Main Menu") {
 
     val UIController: UIController by inject()
 
-    override val root = form {
+    override val root = vbox {
         setPrefSize(400.0, 200.0)
         fieldset(labelPosition = Orientation.VERTICAL) {
             text("")
@@ -22,10 +22,10 @@ class MainMenu : View("PrócaBláthanna Main Menu") {
                 isDefaultButton = true
                 useMaxWidth = true
                 action {
-                    openInternalWindow<AddFlowerUI>()
-                   // runAsyncWithProgress {
-                  //      UIController.loadAddScreen()
-                  //  }
+                  //  openInternalWindow<AddFlowerUI>()
+                     runAsyncWithProgress {
+                          UIController.loadAddScreen()
+                     }
                 }
             }
             text("")
@@ -54,6 +54,4 @@ class MainMenu : View("PrócaBláthanna Main Menu") {
         }
 
     }
-
-
 }
