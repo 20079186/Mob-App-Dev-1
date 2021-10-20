@@ -1,10 +1,13 @@
 package org.wit.prócaBláthanna.console.controllers
 
 import mu.KotlinLogging
+import org.wit.procaBlathanna.console.views.DeleteFlowerUI
+import org.wit.prócaBláthanna.console.main.flowerView
+import org.wit.prócaBláthanna.console.main.search
 import org.wit.prócaBláthanna.console.models.FlowerJSONStore
 import org.wit.prócaBláthanna.console.models.FlowerModel
 import org.wit.prócaBláthanna.console.views.AddFlowerUI
-import org.wit.prócaBláthanna.console.views.DeleteFlowerUI
+
 import org.wit.prócaBláthanna.console.views.FlowerListUI
 import org.wit.prócaBláthanna.console.views.MainMenu
 import tornadofx.*
@@ -24,6 +27,20 @@ import tornadofx.*
             logger.info("Flower Added")
         }
 
+        fun delete() {
+            flowerView.listFlowers(flowers)
+            var searchId = flowerView.getId()
+            val aFlower = search(searchId)
+
+            if (aFlower != null) {
+                flowers.delete(aFlower)
+                println("Flower Deleted")
+                flowerView.listFlowers(flowers)
+            } else
+                print("Flower not deleted")
+        }
+
+
         fun loadListScreen() {
             runLater {
                 find(MainMenu::class).replaceWith(FlowerListUI::class, sizeToScene = true, centerOnScreen = true)
@@ -41,6 +58,11 @@ import tornadofx.*
             runLater {
                 find(FlowerListUI::class).replaceWith(DeleteFlowerUI::class, sizeToScene = true, centerOnScreen = true)
 
+            }
+        }
+        fun closeDelete() {
+            runLater {
+                find(AddFlowerUI::class).replaceWith(MainMenu::class, sizeToScene = true, centerOnScreen = true)
             }
         }
 
