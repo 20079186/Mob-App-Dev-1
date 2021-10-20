@@ -9,7 +9,7 @@ class FlowerController {
 
     val flowers = FlowerJSONStore()
     val flowerView = FlowerView()
-    val logger = KotlinLogging.logger{}
+    val logger = KotlinLogging.logger {}
 
     init {
         logger.info { "Launching Próca Bláthanna Console App" }
@@ -36,9 +36,11 @@ class FlowerController {
     }
 
 
-    fun menu() :Int { return flowerView.menu()}
+    fun menu(): Int {
+        return flowerView.menu()
+    }
 
-    fun add(){
+    fun add() {
         var aFlower = FlowerModel()
 
         if (flowerView.addFlowerData(aFlower))
@@ -57,16 +59,14 @@ class FlowerController {
         var searchId = flowerView.getId()
         val aFlower = search(searchId)
 
-        if(aFlower != null) {
-            if(flowerView.updateFlowerData(aFlower)) {
+        if (aFlower != null) {
+            if (flowerView.updateFlowerData(aFlower)) {
                 flowers.update(aFlower)
                 flowerView.showFlower(aFlower)
                 logger.info("Flower Updated : [ $aFlower ]")
-            }
-            else
+            } else
                 logger.info("Flower Not Updated")
-        }
-        else
+        } else
             println("Flower Not Updated...")
     }
 
@@ -76,21 +76,22 @@ class FlowerController {
     }
 
 
-    fun search(id: Long) : FlowerModel? {
+    fun search(id: Long): FlowerModel? {
         var foundFlower = flowers.findOne(id)
         return foundFlower
     }
- fun delete(){
-     flowerView.listFlowers(flowers)
-     var searchId = flowerView.getId()
-     val aFlower = search(searchId)
 
-     if(aFlower != null) {
-         flowers.delete(aFlower)
-         println("Flower Deleted")
-         flowerView.listFlowers(flowers)
-     }else
-         print("Flower not deleted")
- }
+    fun delete() {
+        flowerView.listFlowers(flowers)
+        var searchId = flowerView.getId()
+        val aFlower = search(searchId)
+
+        if (aFlower != null) {
+            flowers.delete(aFlower)
+            println("Flower Deleted")
+            flowerView.listFlowers(flowers)
+        } else
+            print("Flower not deleted")
+    }
 
 }
