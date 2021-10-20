@@ -1,4 +1,4 @@
-Assignment 1 - Web App Development.
+Assignment 1 - Mobile Application Development.
 
 Próca Bláthanna - 
 
