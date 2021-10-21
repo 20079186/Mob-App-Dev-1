@@ -2,7 +2,7 @@ Assignment 1 - Mobile Application Development.
 
 Próca Bláthanna - 
 
-A simple Kotlin Application where you can add your favourite flowers and informaiton on how to take care of them and when they are in season. Limited TornadoFX with the app. 
+A simple Kotlin Application where you can add your favourite flowers and information on how to take care of them and when they are in season. Limited TornadoFX with the app. 
 
 Name: Amie Abbotts
 Features CLI -
